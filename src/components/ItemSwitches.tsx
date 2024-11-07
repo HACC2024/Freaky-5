@@ -29,7 +29,7 @@ const ItemSwitches: React.FC<ItemSwitchProps> = ({ switchStates, switchValues, i
         <Form.Check
           type="switch"
           id={`switch-${index}`}
-          label={`Switch ${index + 1} (+${value})`}
+          label={`Switch ${index + 1} (+${value.toFixed(2)}%)`}
           checked={switchStates[index]}
           onChange={() => handleSwitchChange(index)}
         />

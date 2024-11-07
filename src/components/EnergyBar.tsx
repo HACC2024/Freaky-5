@@ -14,9 +14,9 @@ Energy bar component displays the energy usage of all activated switches.
 const EnergyBar: React.FC<EnergyBarProps> = ({ value }) => {
   // Function to determine the color of the progress bar
   const getProgressBarColor = () => {
-    if (value <= 50) return 'success';
-    if (value <= 75) return 'warning';
-    return 'danger'; // Above 90, we use red
+    if (value <= 50) return 'success'; // Below 50, we use green
+    if (value <= 75) return 'warning'; // Below 75, we use yellow
+    return 'danger'; // Above, we use red
   };
 
   return (
@@ -25,7 +25,7 @@ const EnergyBar: React.FC<EnergyBarProps> = ({ value }) => {
       <ProgressBar
         now={value}
         max={100}
-        label={`${value}%`}
+        label={`${value.toFixed(2)}%`}
         variant={getProgressBarColor()}
       />
     </Container>

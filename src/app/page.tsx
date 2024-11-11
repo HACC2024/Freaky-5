@@ -17,13 +17,13 @@ const Home = () => {
   const switchSum = switchValues.reduce((total: number, value: number) => total + value, 0); // Sum of all switch values
   const switchPercentages = switchValues.map((value: number) => (value / switchSum) * 100); // Calculate the percentage of each switch
   const images = [
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
+    '../public/Air_Conditioner.png',
+    '../public/Ceiling_Fan.png',
+    '../public/Lamp_Light.png',
+    '../public/Microwave.png',
+    '../public/Oven_Stove.png',
+    '../public/Refrigerator.png',
+    '../public/TV.png',
   ]; // Add the image URLs for each switch in the public folder
   const totalValue = switchStates.reduce((total: number, isOn: boolean, index: number) => (isOn ? total + switchPercentages[index] : total), 0);
   const handleSwitchChange = (index: number) => {

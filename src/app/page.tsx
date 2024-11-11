@@ -13,6 +13,7 @@ import Navbar from '@/components/Navbar';
 const Home = () => {
   const [switchStates, setSwitchStates] = useState([false, false, false, false, false, false, false]); // Initial state of each switch, always starts as false
   const switchValues = [10, 20, 15, 5, 30, 5, 5]; // Values for each switch
+  const switchNames = ['Light', 'Fan', 'TV', 'Computer', 'Fridge', 'Washing Machine', 'Microwave']; // Names for each switch
   const switchSum = switchValues.reduce((total: number, value: number) => total + value, 0); // Sum of all switch values
   const switchPercentages = switchValues.map((value: number) => (value / switchSum) * 100); // Calculate the percentage of each switch
   const images = [
@@ -35,7 +36,7 @@ const Home = () => {
       <Container>
         <Title />
         <EnergyBar value={totalValue} />
-        <ItemSwitches switchStates={switchStates} switchValues={switchPercentages} images={images} handleSwitchChange={handleSwitchChange} />
+        <ItemSwitches switchStates={switchStates} switchValues={switchPercentages} switchNames={switchNames} images={images} handleSwitchChange={handleSwitchChange} />
       </Container>
     </main>
   );
